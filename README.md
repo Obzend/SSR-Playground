@@ -7,3 +7,9 @@
 3. The browser renderes the application, then loads the client bundle
 4. Client bundle boots up (src/client.client.js)
 5. Hydration (React "takes over" the existing rendered app, binds event handlers, etc.)
+
+
+## Routing 
+
+1. Server - [StaticRouter](https://v5.reactrouter.com/web/api/StaticRouter)
+2. Clien - [BrowserRouter](https://v5.reactrouter.com/web/api/BrowserRouter)
