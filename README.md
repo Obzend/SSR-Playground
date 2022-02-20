@@ -1,5 +1,9 @@
 # SSR-Playground
 
+## Quick start
+1. `npm install`
+2. `npm run dev`
+
 ## Lifecycle
 
 1. Application gets rendered into a template on the server (src/index.js)
