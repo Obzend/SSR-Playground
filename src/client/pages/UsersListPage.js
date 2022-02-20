@@ -7,8 +7,10 @@ const UsersList = () => {
   const users = useSelector(state => state.users);
 
   useEffect(() => {
+    if (users) return;
+    
     dispatch(fetchUsers());
-  }, []);
+  }, [users]);
 
   const renderUsers = () => users.map((u) => {
     return <li key={u.id}>{u.name}</li>
