@@ -27,6 +27,7 @@ const loadData = (store) => {
   return store.dispatch(fetchUsers());
 }
 
-export { loadData };
-
-export default UsersList;
+export default {
+  loadData,
+  component: UsersList,
+};

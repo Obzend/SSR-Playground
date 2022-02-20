@@ -333,7 +333,7 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"./node_modules/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRouterDom = __webpack_require__(/*! react-router-dom */ \"./node_modules/react-router-dom/esm/react-router-dom.js\");\n\nvar _Home = __webpack_require__(/*! ./components/Home */ \"./src/client/components/Home.js\");\n\nvar _Home2 = _interopRequireDefault(_Home);\n\nvar _UsersList = __webpack_require__(/*! ./components/UsersList */ \"./src/client/components/UsersList.js\");\n\nvar _UsersList2 = _interopRequireDefault(_UsersList);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n// export default () => {\n//   return (\n//     <div>\n//       <Route exact path=\"/\" component={Home} />\n//       <Route path=\"/users\" component={UsersList} />\n//     </div>\n//   );\n// };\n\nexports[\"default\"] = [{\n  path: '/',\n  component: _Home2.default,\n  exact: true\n}, {\n  loadData: _UsersList.loadData,\n  path: '/users',\n  component: _UsersList2.default\n}];\n\n//# sourceURL=webpack://ssr-playground/./src/client/Routes.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _HomePage = __webpack_require__(/*! ./pages/HomePage */ \"./src/client/pages/HomePage.js\");\n\nvar _HomePage2 = _interopRequireDefault(_HomePage);\n\nvar _UsersListPage = __webpack_require__(/*! ./pages/UsersListPage */ \"./src/client/pages/UsersListPage.js\");\n\nvar _UsersListPage2 = _interopRequireDefault(_UsersListPage);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nexports[\"default\"] = [_extends({}, _HomePage2.default, {\n  path: '/',\n  exact: true\n}), _extends({}, _UsersListPage2.default, {\n  path: '/users'\n})];\n\n//# sourceURL=webpack://ssr-playground/./src/client/Routes.js?");
 
 /***/ }),
 
@@ -348,25 +348,25 @@ eval("\n\n__webpack_require__(/*! babel-polyfill */ \"./node_modules/babel-polyf
 
 /***/ }),
 
-/***/ "./src/client/components/Home.js":
-/*!***************************************!*\
-  !*** ./src/client/components/Home.js ***!
-  \***************************************/
+/***/ "./src/client/pages/HomePage.js":
+/*!**************************************!*\
+  !*** ./src/client/pages/HomePage.js ***!
+  \**************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar Home = function Home() {\n  return _react2.default.createElement(\n    \"div\",\n    null,\n    _react2.default.createElement(\n      \"div\",\n      null,\n      \"I'm the very best home component\"\n    ),\n    _react2.default.createElement(\n      \"button\",\n      { onClick: function onClick() {\n          return console.log(\"Hi there!\");\n        } },\n      \" Press me!\"\n    )\n  );\n};\n\nexports[\"default\"] = Home;\n\n//# sourceURL=webpack://ssr-playground/./src/client/components/Home.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar HomePage = function HomePage() {\n  return _react2.default.createElement(\n    \"div\",\n    null,\n    _react2.default.createElement(\n      \"div\",\n      null,\n      \"I'm the very best HomePage component\"\n    ),\n    _react2.default.createElement(\n      \"button\",\n      { onClick: function onClick() {\n          return console.log(\"Hi there!\");\n        } },\n      \" Press me!\"\n    )\n  );\n};\n\nexports[\"default\"] = {\n  component: HomePage\n};\n\n//# sourceURL=webpack://ssr-playground/./src/client/pages/HomePage.js?");
 
 /***/ }),
 
-/***/ "./src/client/components/UsersList.js":
-/*!********************************************!*\
-  !*** ./src/client/components/UsersList.js ***!
-  \********************************************/
+/***/ "./src/client/pages/UsersListPage.js":
+/*!*******************************************!*\
+  !*** ./src/client/pages/UsersListPage.js ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\nexports.loadData = undefined;\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _actions = __webpack_require__(/*! ../store/actions */ \"./src/client/store/actions/index.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar UsersList = function UsersList() {\n  var dispatch = (0, _reactRedux.useDispatch)();\n  var users = (0, _reactRedux.useSelector)(function (state) {\n    return state.users;\n  });\n\n  (0, _react.useEffect)(function () {\n    dispatch((0, _actions.fetchUsers)());\n  }, []);\n\n  var renderUsers = function renderUsers() {\n    return users.map(function (u) {\n      return _react2.default.createElement(\n        \"li\",\n        { key: u.id },\n        u.name\n      );\n    });\n  };\n\n  return _react2.default.createElement(\n    \"div\",\n    null,\n    \"Here's a list of users\",\n    _react2.default.createElement(\n      \"ul\",\n      null,\n      renderUsers()\n    )\n  );\n};\n\nvar loadData = function loadData(store) {\n  console.log('Im trying to load some data');\n  return store.dispatch((0, _actions.fetchUsers)());\n};\n\nexports.loadData = loadData;\nexports[\"default\"] = UsersList;\n\n//# sourceURL=webpack://ssr-playground/./src/client/components/UsersList.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", ({\n  value: true\n}));\n\nvar _react = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ \"./node_modules/react-redux/es/index.js\");\n\nvar _actions = __webpack_require__(/*! ../store/actions */ \"./src/client/store/actions/index.js\");\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar UsersList = function UsersList() {\n  var dispatch = (0, _reactRedux.useDispatch)();\n  var users = (0, _reactRedux.useSelector)(function (state) {\n    return state.users;\n  });\n\n  (0, _react.useEffect)(function () {\n    dispatch((0, _actions.fetchUsers)());\n  }, []);\n\n  var renderUsers = function renderUsers() {\n    return users.map(function (u) {\n      return _react2.default.createElement(\n        \"li\",\n        { key: u.id },\n        u.name\n      );\n    });\n  };\n\n  return _react2.default.createElement(\n    \"div\",\n    null,\n    \"Here's a list of users\",\n    _react2.default.createElement(\n      \"ul\",\n      null,\n      renderUsers()\n    )\n  );\n};\n\nvar loadData = function loadData(store) {\n  console.log('Im trying to load some data');\n  return store.dispatch((0, _actions.fetchUsers)());\n};\n\nexports[\"default\"] = {\n  loadData: loadData,\n  component: UsersList\n};\n\n//# sourceURL=webpack://ssr-playground/./src/client/pages/UsersListPage.js?");
 
 /***/ }),
 
